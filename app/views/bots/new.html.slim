@@ -1,0 +1,12 @@
+.row
+  .col.s12
+    .card
+      = simple_form_for @bot do |f|
+        .card-content
+          .row
+            .card-title = "Hello master #{current_user.email} what will be my name and purpose?"
+            p = "Your first bot should have a nice name, i expect that you consider it well"
+            = f.input :name, wrapper_html: {class: 'col s12'}
+          .card-actions
+            .row
+              = f.submit "This is your name", class: "btn right"

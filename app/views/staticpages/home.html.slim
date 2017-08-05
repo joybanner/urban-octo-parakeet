@@ -1,0 +1,18 @@
+.row
+  .col.s12
+    .card
+      .card-content
+        .card-title = "welcome to botbot"
+        - if current_user.present? && current_user.bots.blank?
+          p = "Hello #{current_user.email} it is time for your first bot"
+          = link_to new_bot_path do
+            .btn = "Create Bot"
+        - elsif current_user.present?
+          p = "Hello #{current_user.email} welcome back"
+          = link_to bots_path do
+            .btn = "View yout bots"
+        -else
+          = link_to new_user_registration_path do
+            .btn = "register"
+          = link_to new_user_session_path do
+            .btn = "login"

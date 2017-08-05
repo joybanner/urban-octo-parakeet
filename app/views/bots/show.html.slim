@@ -1,0 +1,24 @@
+.row
+  .col.s8
+    .card
+      .card-content
+        .card-title = "Hi #{current_user.email} it's me #{@bot.name}"
+        p = "I don't know much right now but you can help me learn real fast! Lets play a little game shall we?"
+        = link_to new_bot_question_path(@bot) do
+          .btn = "That sounds fun!"
+  .col.s4
+    .card
+      .card-content
+        .card-title = "Bot stats"
+
+  .col.s8
+    .card
+      .card-content
+        .message-box
+          table.chat-table
+          
+          .row
+            .col.s3
+              .btn = "send"
+            .col.s9  
+              input type="text"
